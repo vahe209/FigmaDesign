@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/menuBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menubar" />
+
+    <ImageButton
+        android:id="@+id/search_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/menuBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/menuBar"
+        app:srcCompat="@drawable/find" />
+
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Work Space"
+        android:textColor="#CC000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuBar" />
+
+
+    <ImageButton
+        android:id="@+id/arrow_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/main_title"
+        app:layout_constraintStart_toEndOf="@+id/main_title"
+        app:layout_constraintTop_toTopOf="@+id/main_title"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <TextView
+        android:id="@+id/textUnderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose your delicious meal"
+        android:textColor="#CC000000"
+        app:layout_constraintStart_toStartOf="@+id/main_title"
+        app:layout_constraintTop_toBottomOf="@+id/main_title" />
+
+    <ImageView
+        android:id="@+id/mainPageIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@color/activeFragmentIconBg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textUnderTitle"
+        app:srcCompat="@drawable/home_page" />
+
+    <ImageView
+        android:id="@+id/likedItemsPageIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/mainPageIcon"
+        app:layout_constraintStart_toEndOf="@+id/mainPageIcon"
+        app:srcCompat="@drawable/choised" />
+
+    <ImageView
+        android:id="@+id/doNotKnowPageIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/likedItemsPageIcon"
+        app:layout_constraintStart_toEndOf="@+id/likedItemsPageIcon"
+        app:layout_constraintTop_toTopOf="@+id/likedItemsPageIcon"
+        app:srcCompat="@drawable/icon" />
+
+    <ImageView
+        android:id="@+id/buyFragmentIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/doNotKnowPageIcon"
+        app:layout_constraintStart_toEndOf="@+id/doNotKnowPageIcon"
+        app:layout_constraintTop_toTopOf="@+id/doNotKnowPageIcon"
+        app:srcCompat="@drawable/orderd" />
+
+    <FrameLayout
+        android:id="@+id/main_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainPageIcon">
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:background="@drawable/footer_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/main_fragment_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_fragment_layout">
+
+
+        <TextView
+            android:id="@+id/countView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="30dp"
+            android:text="0 Items"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/priceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/countView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="0dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textUnderTitle"
+        app:layout_constraintStart_toEndOf="@+id/arrow_bottom"
+        app:layout_constraintTop_toTopOf="@+id/main_title"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
